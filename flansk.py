@@ -101,7 +101,8 @@ def hotel_page(hotel_name):
     room_list = hotel.get_room_list
     return render_template(f'{hotel_name}.html', rooms=room_list, images=images, hotels=hotel)
 
-print("Hello world!")
+print("Hello world! , you")
+
 
 # @app.route('/Amora Thapae')S
 # def AmoraThapae():
