@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<style>
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    .navbar {
+        margin-bottom: 25px;
+    }
+    .card {
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .card-footer {
+        margin-top: auto; 
+        border-top: none; 
+    }
+    h1{
+        margin-bottom: 20px;
+    }
+</style>
+
+{% endblock %}
+
+{% block content %} 
+<center><h1>Hotel in Thailand</h1></center>
+<div class="container">
+    <div class="row">
+        {% for i in range(hotels|length) %}
+        <div class="col-md-4 mb-3"> 
+            <div class="card ">
+                <img class="card-img-top" src="{{ url_for('get_image',folder='hotel', image_name=images[i]) }}" style="width:100%" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{ hotels[i].get_name }}</h4>
+                    <p class="card-text">This hotel is located in <b>{{ hotels[i].get_location }}</b>.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/{{ hotels[i].get_name }}" class="btn btn-dark">View more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

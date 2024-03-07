@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %} 
+<center><h1> Register page </h1></center>
+<div class="container mt-5">
+    <form method="POST" action="/register" class="mx-auto" style="max-width: 300px;">
+        <!-- Username input -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" />
+        </div>
+        <!-- Password input -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" />
+        </div>
+        <!-- Submit button -->
+        <button type="submit" value="Submit" class="btn btn-primary btn-block">Register</button>
+
+    </form>
+</div>
+
+{% endblock %}
+    
+
