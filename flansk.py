@@ -38,17 +38,11 @@ def index():
 @app.route('/hotel')
 def Hotelpage():
     images = os.listdir(IMAGE_FOLDER_HOTEL)
-
-    if 'username' in session:
-        return render_template('hotel.html',hotels=hotel_list, images=images)
     return render_template('hotel.html',hotels=hotel_list, images=images)
 
 @app.route('/taxi')
 def Taxipage():
     images = os.listdir(IMAGE_FOLDER_TAXI)
-
-    if 'username' in session:
-        return render_template('taxi.html', taxis=taxi_list, images=images)
     return render_template('taxi.html', taxis=taxi_list, images=images)
 
 @app.route('/report')
@@ -100,8 +94,6 @@ def AmoraThapae():
     images = os.listdir(IMAGE_FOLDER_ROOM)
     hotel = control.seach_hotel_from_name('Amora Thapae')
     room_list = hotel.get_room_list
-    if 'username' in session:
-        return render_template('Amora Thapae.html',rooms=room_list, images=images)
     return render_template('Amora Thapae.html',rooms=room_list, images=images)
 
 @app.route('/Baiyoke Sky Hotel')
@@ -109,8 +101,6 @@ def BaiyokeSkyHotel():
     images = os.listdir(IMAGE_FOLDER_ROOM)
     hotel = control.seach_hotel_from_name('Baiyoke Sky Hotel')
     room_list = hotel.get_room_list
-    if 'username' in session:
-        return render_template('Baiyoke Sky Hotel.html',rooms=room_list, images=images)
     return render_template('Baiyoke Sky Hotel.html',rooms=room_list, images=images)
 
 @app.route('/Novotel Rayong Star Centre')
