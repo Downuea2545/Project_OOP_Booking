@@ -99,7 +99,7 @@ def hotel_page(hotel_name):
     images = os.listdir(folder_name)
     hotel = control.seach_hotel_from_name(hotel_name)
     room_list = hotel.get_room_list
-    return render_template('{}.html'.format(hotel_name), rooms=room_list, images=images, hotels=hotel)
+    return render_template(f'{hotel_name}.html', rooms=room_list, images=images, hotels=hotel)
 
 
 
