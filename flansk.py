@@ -16,7 +16,7 @@ account_list = control.get_account_list
 # กำหนดเส้นทางสำหรับโฟลเดอร์รูปภาพ
 IMAGE_FOLDER_HOTEL = 'hotel'
 IMAGE_FOLDER_TAXI = 'taxi'
-IMAGE_FOLDER_ROOM = 'room'
+IMAGE_FOLDER_ROOM = 'room_amorathapae'
 
 @app.route('/images/<path:folder>/<path:image_name>')
 def get_image(folder, image_name):
