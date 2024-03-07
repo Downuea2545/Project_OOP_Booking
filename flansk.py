@@ -89,107 +89,116 @@ def register():
 
 #--------------------------Hotel-----------------------------------------------------------
 
-@app.route('/Amora Thapae')
-def AmoraThapae():
+@app.route('/<hotel_name>')
+def hotel_page(hotel_name):
     images = os.listdir(IMAGE_FOLDER_ROOM)
-    hotel = control.seach_hotel_from_name('Amora Thapae')
+    hotel = control.seach_hotel_from_name(hotel_name)
     room_list = hotel.get_room_list
-    return render_template('Amora Thapae.html',rooms=room_list, images=images)
+    return render_template('{}.html'.format(hotel_name), rooms=room_list, images=images)
 
-@app.route('/Baiyoke Sky Hotel')
-def BaiyokeSkyHotel():
-    images = os.listdir(IMAGE_FOLDER_ROOM)
-    hotel = control.seach_hotel_from_name('Baiyoke Sky Hotel')
-    room_list = hotel.get_room_list
-    return render_template('Baiyoke Sky Hotel.html',rooms=room_list, images=images)
 
-@app.route('/Novotel Rayong Star Centre')
-def NovotelRayongStarCentre():
-    return render_template('Novotel Rayong Star Centre.html')
 
-@app.route('/Hotel Fuse Rayong')
-def HotelFuseRayong():
-    return render_template('Hotel Fuse Rayong.html')
+# @app.route('/Amora Thapae')S
+# def AmoraThapae():
+#     images = os.listdir(IMAGE_FOLDER_ROOM)
+#     hotel = control.seach_hotel_from_name('Amora Thapae')
+#     room_list = hotel.get_room_list
+#     return render_template('Amora Thapae.html',rooms=room_list, images=images)
 
-@app.route('/Phavina Hotel Rayong')
-def PhavinaHotelRayong():
-    return render_template('Phavina Hotel Rayong.html')
+# @app.route('/Baiyoke Sky Hotel')
+# def BaiyokeSkyHotel():
+#     images = os.listdir(IMAGE_FOLDER_ROOM)
+#     hotel = control.seach_hotel_from_name('Baiyoke Sky Hotel')
+#     room_list = hotel.get_room_list
+#     return render_template('Baiyoke Sky Hotel.html',rooms=room_list, images=images)
 
-@app.route('/Star Convention Hotel')
-def StarConventionHotel():
-    return render_template('Star Convention Hotel.html')
+# @app.route('/Novotel Rayong Star Centre')
+# def NovotelRayongStarCentre():
+#     return render_template('Novotel Rayong Star Centre.html')
 
-@app.route('/The Blanket Hotel')
-def TheBlanketHotel():
-    return render_template('The Blanket Hotel.html')
+# @app.route('/Hotel Fuse Rayong')
+# def HotelFuseRayong():
+#     return render_template('Hotel Fuse Rayong.html')
 
-@app.route('/Seabed Grand Hotel')
-def SeabedGrandHotel():
-    return render_template('Seabed Grand Hotel.html')
+# @app.route('/Phavina Hotel Rayong')
+# def PhavinaHotelRayong():
+#     return render_template('Phavina Hotel Rayong.html')
 
-@app.route('/Blu Monkey Hotel')
-def BluetoothMonkeyHotel():
-    return render_template('Blu Monkey Hotel.html')
+# @app.route('/Star Convention Hotel')
+# def StarConventionHotel():
+#     return render_template('Star Convention Hotel.html')
 
-@app.route('/Blue Carina Hotel')
-def BlueCarinaHotel():
-    return render_template('Blue Carina Hotel.html')
+# @app.route('/The Blanket Hotel')
+# def TheBlanketHotel():
+#     return render_template('The Blanket Hotel.html')
 
-@app.route('/Le cassia Hotel')
-def LecassiaHotel():
-    return render_template('Le cassia Hotel.html')
+# @app.route('/Seabed Grand Hotel')
+# def SeabedGrandHotel():
+#     return render_template('Seabed Grand Hotel.html')
 
-@app.route('/Romantic Hotel')
-def RomanticHotel():
-    return render_template('Romantic Hotel.html')
+# @app.route('/Blu Monkey Hotel')
+# def BluetoothMonkeyHotel():
+#     return render_template('Blu Monkey Hotel.html')
 
-@app.route('/Sirin Hotel')
-def TherinHotel():
-    return render_template('Sirin Hotel.html')
+# @app.route('/Blue Carina Hotel')
+# def BlueCarinaHotel():
+#     return render_template('Blue Carina Hotel.html')
 
-@app.route('/Nadee 10 Hotel')
-def Nadee10Hotel():
-    return render_template('Nadee 10 Hotel.html')
+# @app.route('/Le cassia Hotel')
+# def LecassiaHotel():
+#     return render_template('Le cassia Hotel.html')
 
-@app.route('/Madera Residence')
-def MaderaResidence():
-    return render_template('Madera Residence.html')
+# @app.route('/Romantic Hotel')
+# def RomanticHotel():
+#     return render_template('Romantic Hotel.html')
 
-@app.route('/Karin Hotel')
-def KarinHotel():
-    return render_template('Karin Hotel.html')
+# @app.route('/Sirin Hotel')
+# def TherinHotel():
+#     return render_template('Sirin Hotel.html')
 
-@app.route('/Citadines Grand Central')
-def GrandCentral():
-    return render_template('Citadines Grand Central.html')
+# @app.route('/Nadee 10 Hotel')
+# def Nadee10Hotel():
+#     return render_template('Nadee 10 Hotel.html')
 
-@app.route('/The Quartier Hotel')
-def QuartierHotel():
-    return render_template('The Quartier Hotel.html')
+# @app.route('/Madera Residence')
+# def MaderaResidence():
+#     return render_template('Madera Residence.html')
 
-@app.route('/Oakwood Hotel')
-def OakwoodHotel():
-    return render_template('Oakwood Hotel.html')
+# @app.route('/Karin Hotel')
+# def KarinHotel():
+#     return render_template('Karin Hotel.html')
 
-@app.route('/The Opium')
-def TheOpium():
-    return render_template('The Opium.html')
+# @app.route('/Citadines Grand Central')
+# def GrandCentral():
+#     return render_template('Citadines Grand Central.html')
 
-@app.route('/Glory Boutique')
-def GloryBoutique():
-    return render_template('Glory Boutique.html')
+# @app.route('/The Quartier Hotel')
+# def QuartierHotel():
+#     return render_template('The Quartier Hotel.html')
 
-@app.route('/Bangsean Hotel')
-def BangseanHotel():
-    return render_template('Bangsean Hotel.html')
+# @app.route('/Oakwood Hotel')
+# def OakwoodHotel():
+#     return render_template('Oakwood Hotel.html')
 
-@app.route('/Centara Chiang Mai')
-def CentaraChiangMai():
-    return render_template('Centara Chiang Mai.html')
+# @app.route('/The Opium')
+# def TheOpium():
+#     return render_template('The Opium.html')
 
-@app.route('/Lit Bangkok')
-def LitBangkok():
-    return render_template('Lit Bangkok.html')
+# @app.route('/Glory Boutique')
+# def GloryBoutique():
+#     return render_template('Glory Boutique.html')
+
+# @app.route('/Bangsean Hotel')
+# def BangseanHotel():
+#     return render_template('Bangsean Hotel.html')
+
+# @app.route('/Centara Chiang Mai')
+# def CentaraChiangMai():
+#     return render_template('Centara Chiang Mai.html')
+
+# @app.route('/Lit Bangkok')
+# def LitBangkok():
+#     return render_template('Lit Bangkok.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

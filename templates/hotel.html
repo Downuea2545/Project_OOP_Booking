@@ -40,7 +40,7 @@
                     <p class="card-text">This hotel is located in <b>{{ hotels[i].get_location }}</b>.</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/{{ hotels[i].get_name }}" class="btn btn-dark">View more</a>
+                    <a href="{{ url_for('hotel_page', hotel_name=hotels[i].get_name) }}" class="btn btn-dark">View more</a>
                 </div>
             </div>
         </div>
