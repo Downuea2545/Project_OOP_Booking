@@ -16,18 +16,19 @@ account_list = control.get_account_list
 # กำหนดเส้นทางสำหรับโฟลเดอร์รูปภาพ
 IMAGE_FOLDER_HOTEL = 'hotel'
 IMAGE_FOLDER_TAXI = 'taxi'
-IMAGE_FOLDER_ROOM = 'room_amorathapae'
+AMORA_THAPAE = 'room_amorathapae'
 
 @app.route('/images/<path:folder>/<path:image_name>')
 def get_image(folder, image_name):
+    folder = str(folder)
     if folder == "hotel":
         return send_from_directory(IMAGE_FOLDER_HOTEL, image_name)
     elif folder == "taxi":
         return send_from_directory(IMAGE_FOLDER_TAXI, image_name)
-    elif folder == 'room':
-        return send_from_directory(IMAGE_FOLDER_ROOM, image_name)
+    elif folder == 'Amora Thapae':
+        return send_from_directory(AMORA_THAPAE, image_name)
     else:
-        return "Invalid folder"
+        return print("Invalid folder")
 
 #--------------------MainPage----------------------------------------------
 
@@ -91,10 +92,11 @@ def register():
 
 @app.route('/<hotel_name>')
 def hotel_page(hotel_name):
-    images = os.listdir(IMAGE_FOLDER_ROOM)
+    folder_name = globals()[hotel_name.upper().replace(" ", "_")]
+    images = os.listdir(folder_name)
     hotel = control.seach_hotel_from_name(hotel_name)
     room_list = hotel.get_room_list
-    return render_template('{}.html'.format(hotel_name), rooms=room_list, images=images)
+    return render_template('{}.html'.format(hotel_name), rooms=room_list, images=images, hotels=hotel)
 
 
 
