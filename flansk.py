@@ -17,6 +17,7 @@ account_list = control.get_account_list
 IMAGE_FOLDER_HOTEL = 'hotel'
 IMAGE_FOLDER_TAXI = 'taxi'
 AMORA_THAPAE = 'room_amorathapae'
+BAIYOKE_SKY_HOTEL = 'room_amorathapae'
 
 @app.route('/images/<path:folder>/<path:image_name>')
 def get_image(folder, image_name):
@@ -26,6 +27,8 @@ def get_image(folder, image_name):
     elif folder == "taxi":
         return send_from_directory(IMAGE_FOLDER_TAXI, image_name)
     elif folder == 'Amora Thapae':
+        return send_from_directory(AMORA_THAPAE, image_name)
+    elif folder == 'Baiyoke Sky Hotel':
         return send_from_directory(AMORA_THAPAE, image_name)
     else:
         return print("Invalid folder")
